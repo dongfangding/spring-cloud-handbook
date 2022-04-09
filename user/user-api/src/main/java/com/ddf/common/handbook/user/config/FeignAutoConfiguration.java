@@ -1,4 +1,4 @@
-package com.ddf.pangu.user.config;
+package com.ddf.common.handbook.user.config;
 
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022/04/07 09:48
  */
 @Configuration
-@EnableFeignClients("com.company.sian.club.api")
+@EnableFeignClients("com.ddf.common.handbook.user.api")
 public class FeignAutoConfiguration {
 }
