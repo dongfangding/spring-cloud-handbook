@@ -1,0 +1,11 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: user-service
+  profiles:
+    active: dev
+
+logging:
+  level:
+    root: info

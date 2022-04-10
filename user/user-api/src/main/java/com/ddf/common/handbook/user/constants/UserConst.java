@@ -9,5 +9,5 @@ package com.ddf.common.handbook.user.constants;
  */
 public class UserConst {
 
-    public static final String SERVICE_NAME = "user";
+    public static final String SERVICE_NAME = "user-service";
 }

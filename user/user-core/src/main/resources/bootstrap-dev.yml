@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    nacos:
+      username: nacos
+      password: Dongfang.ding_nacos
+      discovery:
+        server-addr: www.snowball.fans:8848
+        namespace: spring-cloud-handbook
+        group: dev
+      config:
+        server-addr: www.snowball.fans:8848
+        namespace: spring-cloud-handbook
+        group: dev
+        file-extension: yaml
+        config-retry-time: 1000
+        refresh-enabled: true

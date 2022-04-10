@@ -19,11 +19,17 @@
     </modules>
 
     <properties>
+        <ddf-common-limit.version>1.0.0.RELEASE</ddf-common-limit.version>
     </properties>
 
     <!--维护依赖-->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.ddf.common</groupId>
+                <artifactId>ddf-common-limit</artifactId>
+                <version>${ddf-common-limit.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
