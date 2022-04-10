@@ -18,6 +18,9 @@
         <module>user</module>
     </modules>
 
+    <properties>
+    </properties>
+
     <!--维护依赖-->
     <dependencyManagement>
         <dependencies>
