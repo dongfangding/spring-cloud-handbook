@@ -16,6 +16,7 @@
 
     <modules>
         <module>user</module>
+        <module>common-api</module>
     </modules>
 
     <properties>

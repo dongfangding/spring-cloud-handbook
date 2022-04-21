@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * <p>description</p >
- * 基础设施
+ * <p>用户信息对外接口层</p >
+ *
  * @author Snowball
  * @version 1.0
  * @date 2022/04/10 11:11
