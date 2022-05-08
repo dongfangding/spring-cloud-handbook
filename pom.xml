@@ -21,7 +21,7 @@
     </modules>
 
     <properties>
-        <ddf-common-limit.version>1.0.0.RELEASE</ddf-common-limit.version>
+        <ddf-common-limit.version>1.0.1-SNAPSHOT</ddf-common-limit.version>
     </properties>
 
     <!--维护依赖-->

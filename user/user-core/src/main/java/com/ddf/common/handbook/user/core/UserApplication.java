@@ -15,7 +15,6 @@ import org.springframework.cloud.client.SpringCloudApplication;
 @SpringCloudApplication
 @MapperScan(basePackages = {"com.ddf.common.handbook.user.core.infrastructure.mapper"})
 @EnableLogAspect(slowTime = 3000)
-//@EnableRepeatable(globalValidator = RedisRepeatableValidator.BEAN_NAME)
 public class UserApplication {
     public static void main(String[] args) {
         SpringApplication.run(UserApplication.class);
