@@ -1,8 +1,8 @@
 server:
-  port: 8099
+  port: 8100
 spring:
   application:
-    name: user-service22
+    name: aggregate-service
   profiles:
     active: dev
 

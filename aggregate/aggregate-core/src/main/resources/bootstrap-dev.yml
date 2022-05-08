@@ -13,14 +13,11 @@ spring:
         namespace: spring-cloud-handbook
         group: dev
         file-extension: yaml
-        name: user-service
+        name: aggregate-service
         config-retry-time: 3000
         refresh-enabled: true
         context-path: nacos # 注意要和nacos server配置文件里的context-path一致
         shared-configs:
           - data-id: common-redis.yaml # 注意在nacos建配置的时候data-id要是common-redis.yaml，估计是想省略一个配置文件的扩展名字段
-            group: dev
-            refresh: true
-          - data-id: common-database.yaml # 注意在nacos建配置的时候data-id要是common-redis.yaml，估计是想省略一个配置文件的扩展名字段
             group: dev
             refresh: true
