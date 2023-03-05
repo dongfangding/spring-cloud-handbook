@@ -13,6 +13,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
  * @date 2022/04/10 22:22
  */
 @SpringCloudApplication
+//@SpringBootApplication
 @MapperScan(basePackages = {"com.ddf.common.handbook.user.core.infrastructure.mapper"})
 @EnableLogAspect(slowTime = 3000)
 public class UserApplication {

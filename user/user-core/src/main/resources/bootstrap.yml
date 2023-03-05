@@ -1,6 +1,12 @@
 server:
   port: 8099
 spring:
+  cloud:
+    nacos:
+      # nacos服务地址通过启动脚本指定
+      username: ${nacos_username}
+      password: ${nacos_password}
+      server-addr: ${nacos_server}
   application:
     name: user-service22
   profiles:
@@ -8,4 +14,4 @@ spring:
 
 logging:
   level:
-    root: info
+    root: debug

@@ -1,10 +1,6 @@
 spring:
   cloud:
     nacos:
-      # nacos服务地址通过启动脚本指定
-      username: ${nacos_username}
-      password: ${nacos_password}
-      server-addr: ${nacos_server}
       discovery:
         namespace: spring-cloud-handbook
         group: dev
