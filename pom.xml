@@ -21,7 +21,10 @@
     </modules>
 
     <properties>
-        <ddf-common-limit.version>1.0.1-SNAPSHOT</ddf-common-limit.version>
+        <pangu-common.version>1.0.0-SNAPSHOT</pangu-common.version>
+        <ddf-common-redis.version>1.0.2-2611-SNAPSHOT</ddf-common-redis.version>
+        <ddf-common-limit.version>1.0.2-2611-SNAPSHOT</ddf-common-limit.version>
+        <ddf-common-core.version>1.0.2-2611-SNAPSHOT</ddf-common-core.version>
     </properties>
 
     <!--维护依赖-->
@@ -29,9 +32,28 @@
         <dependencies>
             <dependency>
                 <groupId>com.ddf.common</groupId>
+                <artifactId>pangu-common</artifactId>
+                <version>${pangu-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ddf.common</groupId>
+                <artifactId>ddf-common-core</artifactId>
+                <version>${ddf-common-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ddf.common</groupId>
                 <artifactId>ddf-common-limit</artifactId>
                 <version>${ddf-common-limit.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.ddf.common</groupId>
+                <artifactId>ddf-common-redis</artifactId>
+                <version>${ddf-common-redis.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

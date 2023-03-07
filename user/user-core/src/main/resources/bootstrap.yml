@@ -1,17 +1,30 @@
 server:
   port: 8099
 spring:
+  application:
+    name: user-service
+  profiles:
+    active: dev
+  datasource:
+    druid:
+      driverClass: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       # nacos服务地址通过启动脚本指定
       username: ${nacos_username}
       password: ${nacos_password}
       server-addr: ${nacos_server}
-  application:
-    name: user-service22
-  profiles:
-    active: dev
+      discovery:
+        # nacos服务地址通过启动脚本指定
+        username: ${nacos_username}
+        password: ${nacos_password}
+        server-addr: ${nacos_server}
+      config:
+        # nacos服务地址通过启动脚本指定
+        username: ${nacos_username}
+        password: ${nacos_password}
+        server-addr: ${nacos_server}
 
 logging:
   level:
-    root: debug
+    root: info

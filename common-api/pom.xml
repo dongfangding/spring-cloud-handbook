@@ -12,26 +12,18 @@
     <artifactId>common-api</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <pangu-common.version>1.0.0-SNAPSHOT</pangu-common.version>
-        <ddf-common-redis.version>1.0.1-SNAPSHOT</ddf-common-redis.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.ddf.common</groupId>
-            <artifactId>ddf-common-redis</artifactId>
-            <version>${ddf-common-redis.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.ddf.common</groupId>
-            <artifactId>pangu-common</artifactId>
-            <version>${pangu-common.version}</version>
+            <groupId>com.ddf.cloud.common</groupId>
+            <artifactId>pangu-common-api</artifactId>
         </dependency>
     </dependencies>
 </project>

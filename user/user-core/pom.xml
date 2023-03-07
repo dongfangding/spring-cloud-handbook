@@ -30,6 +30,11 @@
             <version>${user-api.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.ddf.cloud.common</groupId>
+            <artifactId>pangu-common-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
