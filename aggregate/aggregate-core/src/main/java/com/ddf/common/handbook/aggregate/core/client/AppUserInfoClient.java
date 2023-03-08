@@ -1,6 +1,7 @@
-package com.ddf.common.handbook.user.api;
+package com.ddf.common.handbook.aggregate.core.client;
 
 import com.ddf.boot.common.api.model.common.response.response.ResponseData;
+import com.ddf.common.handbook.user.api.AppUserInfoFacade;
 import com.ddf.common.handbook.user.constants.UserConst;
 import com.ddf.common.handbook.user.request.base.EmailRegistryRequest;
 import com.ddf.common.handbook.user.request.base.EmailRegistryValidateRequest;
@@ -8,21 +9,28 @@ import com.ddf.common.handbook.user.request.base.SearchUserRequest;
 import com.ddf.common.handbook.user.response.base.EmailRegistryValidateResponse;
 import com.ddf.common.handbook.user.response.base.UserInfoDTO;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 /**
- * <p>用户相关app接口</p >
+ * <p>description</p >
  *
  * @author Snowball
  * @version 1.0
- * @date 2022/04/09 23:15
+ * @date 2023/03/08 17:37
  */
+@Service
+@RequiredArgsConstructor(onConstructor_ = {@Autowired})
+@Slf4j
 @FeignClient(name = UserConst.SERVICE_NAME, path = "/userInfo", contextId = "appUserInfoFacade")
-public interface AppUserInfoFacade {
+public class AppUserInfoClient {
+
+    private final AppUserInfoFacade appUserInfoFacade;
 
     /**
      * 校验注册信息是否可用
@@ -30,8 +38,9 @@ public interface AppUserInfoFacade {
      * @param request
      * @return
      */
-    @PostMapping("checkRegistryInfo")
-    ResponseData<EmailRegistryValidateResponse> checkRegistryInfo(@RequestBody @Validated EmailRegistryValidateRequest request);
+    public ResponseData<EmailRegistryValidateResponse> checkRegistryInfo(EmailRegistryValidateRequest request) {
+        return appUserInfoFacade.checkRegistryInfo(request);
+    }
 
     /**
      * 邮箱注册
@@ -39,8 +48,9 @@ public interface AppUserInfoFacade {
      * @param request
      * @return
      */
-    @PostMapping("registry")
-    ResponseData<Boolean> registry(@RequestBody @Validated EmailRegistryRequest request);
+    public ResponseData<Boolean> registry(@RequestBody @Validated EmailRegistryRequest request) {
+        return appUserInfoFacade.registry(request);
+    }
 
     /**
      * 查询用户
@@ -48,7 +58,7 @@ public interface AppUserInfoFacade {
      * @param request
      * @return
      */
-    @GetMapping("searchUser")
-    ResponseData<List<UserInfoDTO>> searchUser(@Validated SearchUserRequest request);
-
+    public ResponseData<List<UserInfoDTO>> searchUser(@Validated SearchUserRequest request) {
+        return appUserInfoFacade.searchUser(request);
+    }
 }

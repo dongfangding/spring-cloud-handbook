@@ -14,6 +14,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <pangu-common-api.version>1.0.0-SNAPSHOT</pangu-common-api.version>
     </properties>
 
     <dependencies>
@@ -24,6 +25,7 @@
         <dependency>
             <groupId>com.ddf.cloud.common</groupId>
             <artifactId>pangu-common-api</artifactId>
+            <version>${pangu-common-api.version}</version>
         </dependency>
     </dependencies>
 </project>

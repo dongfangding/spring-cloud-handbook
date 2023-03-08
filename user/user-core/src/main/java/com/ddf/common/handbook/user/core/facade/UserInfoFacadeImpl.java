@@ -1,5 +1,6 @@
 package com.ddf.common.handbook.user.core.facade;
 
+import com.ddf.boot.common.api.model.common.response.response.ResponseData;
 import com.ddf.common.handbook.user.api.AppUserInfoFacade;
 import com.ddf.common.handbook.user.request.base.EmailRegistryRequest;
 import com.ddf.common.handbook.user.request.base.EmailRegistryValidateRequest;
@@ -31,8 +32,8 @@ public class UserInfoFacadeImpl implements AppUserInfoFacade {
      * @return
      */
     @Override
-    public EmailRegistryValidateResponse checkRegistryInfo(EmailRegistryValidateRequest request) {
-        return null;
+    public ResponseData<EmailRegistryValidateResponse> checkRegistryInfo(EmailRegistryValidateRequest request) {
+        return ResponseData.success(new EmailRegistryValidateResponse());
     }
 
     /**
@@ -42,7 +43,7 @@ public class UserInfoFacadeImpl implements AppUserInfoFacade {
      * @return
      */
     @Override
-    public Boolean registry(EmailRegistryRequest request) {
+    public ResponseData<Boolean> registry(EmailRegistryRequest request) {
         return null;
     }
 
@@ -53,7 +54,7 @@ public class UserInfoFacadeImpl implements AppUserInfoFacade {
      * @return
      */
     @Override
-    public List<UserInfoDTO> searchUser(SearchUserRequest request) {
+    public ResponseData<List<UserInfoDTO>> searchUser(SearchUserRequest request) {
         return null;
     }
 }

@@ -1,0 +1,4 @@
+POST http://localhost:8100/用户控制器/checkRegistryInfo
+content-type: application/json
+
+{}

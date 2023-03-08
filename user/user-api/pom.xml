@@ -25,6 +25,7 @@
         <dependency>
             <groupId>com.ddf.common.spring-cloud-handbook</groupId>
             <artifactId>common-api</artifactId>
+            <version>${common-api.version}</version>
         </dependency>
     </dependencies>
 

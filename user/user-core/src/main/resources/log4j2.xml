@@ -2,7 +2,8 @@
 <!-- Log4j 2.x 配置文件 -->
 <Configuration status="warn" strict="true">
     <Properties>
-        <Property name="LOG_BASE_DIR">/data/logs/spring-cloud-handbook/user/</Property>
+        <Property name="LOG_NAME">${application_name}</Property>
+        <Property name="LOG_BASE_DIR">/data/logs/spring-cloud-handbook/${LOG_NAME}</Property>
         <Property name="CONSOLE_LOG_PATTERN">%clr{[%d{yyyy-MM-dd HH:mm:ss.SSS}]}{faint} %clr{%level}{magenta}
             %clr{[%t]}{faint} %clr{%c{1.}}{cyan} %clr{-}{faint} %m%n%xwEx
         </Property>
@@ -16,8 +17,8 @@
             <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}"/>
         </Console>
 
-        <RollingRandomAccessFile name="INFO_FILE" fileName="${LOG_BASE_DIR}/user.log"
-                                 filePattern="${LOG_BASE_DIR}/user-%d{yyyy-MM-dd}.log">
+        <RollingRandomAccessFile name="INFO_FILE" fileName="${LOG_BASE_DIR}/${LOG_NAME}.log"
+                                 filePattern="${LOG_BASE_DIR}/${LOG_NAME}-%d{yyyy-MM-dd}.log">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
             <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
             <!-- 需要记录的格式 -->
@@ -30,8 +31,8 @@
             <DefaultRolloverStrategy max="30"/>
         </RollingRandomAccessFile>
 
-        <RollingRandomAccessFile name="WARN_FILE" fileName="${LOG_BASE_DIR}/user-warn.log"
-                                 filePattern="${LOG_BASE_DIR}/user-warn-%d{yyyy-MM-dd}.log">
+        <RollingRandomAccessFile name="WARN_FILE" fileName="${LOG_BASE_DIR}/${LOG_NAME}-warn.log"
+                                 filePattern="${LOG_BASE_DIR}/${LOG_NAME}-warn-%d{yyyy-MM-dd}.log">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
             <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
             <!-- 需要记录的格式 -->
@@ -44,8 +45,8 @@
             <DefaultRolloverStrategy max="30"/>
         </RollingRandomAccessFile>
 
-        <RollingRandomAccessFile name="ERROR_FILE" fileName="${LOG_BASE_DIR}/user-error.log"
-                                 filePattern="${LOG_BASE_DIR}/user-error-%d{yyyy-MM-dd}.log">
+        <RollingRandomAccessFile name="ERROR_FILE" fileName="${LOG_BASE_DIR}/${LOG_NAME}-error.log"
+                                 filePattern="${LOG_BASE_DIR}/${LOG_NAME}-error-%d{yyyy-MM-dd}.log">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
             <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
             <!-- 需要记录的格式 -->

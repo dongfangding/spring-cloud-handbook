@@ -5,7 +5,18 @@ spring:
     name: aggregate-service
   profiles:
     active: dev
-
+  cloud:
+    nacos:
+      discovery:
+        # nacos服务地址通过启动脚本指定
+        username: ${nacos_username}
+        password: ${nacos_password}
+        server-addr: ${nacos_server}
+      config:
+        # nacos服务地址通过启动脚本指定
+        username: ${nacos_username}
+        password: ${nacos_password}
+        server-addr: ${nacos_server}
 logging:
   level:
     root: info

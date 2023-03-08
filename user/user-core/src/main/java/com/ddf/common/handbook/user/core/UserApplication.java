@@ -3,7 +3,7 @@ package com.ddf.common.handbook.user.core;
 import com.ddf.boot.common.core.logaccess.EnableLogAspect;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * <p>description</p >
@@ -12,8 +12,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
  * @version 1.0
  * @date 2022/04/10 22:22
  */
-@SpringCloudApplication
-//@SpringBootApplication
+@SpringBootApplication
 @MapperScan(basePackages = {"com.ddf.common.handbook.user.core.infrastructure.mapper"})
 @EnableLogAspect(slowTime = 3000)
 public class UserApplication {

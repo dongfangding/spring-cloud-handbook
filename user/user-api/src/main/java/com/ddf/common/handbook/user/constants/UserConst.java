@@ -9,5 +9,13 @@ package com.ddf.common.handbook.user.constants;
  */
 public class UserConst {
 
+    /**
+     * feign client 服务名称
+     */
     public static final String SERVICE_NAME = "user-service";
+
+    /**
+     * feign client api包名
+     */
+    public static final String FEIGN_CLIENT_PACKAGES = "com.ddf.common.handbook.user.api";
 }

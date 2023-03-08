@@ -10,10 +10,6 @@ spring:
       driverClass: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
-      # nacos服务地址通过启动脚本指定
-      username: ${nacos_username}
-      password: ${nacos_password}
-      server-addr: ${nacos_server}
       discovery:
         # nacos服务地址通过启动脚本指定
         username: ${nacos_username}
