@@ -6,8 +6,7 @@ spring:
   profiles:
     active: dev
   datasource:
-    druid:
-      driverClass: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       discovery:
@@ -15,11 +14,13 @@ spring:
         username: ${nacos_username}
         password: ${nacos_password}
         server-addr: ${nacos_server}
+        access-key: SecretKey012345678901234567890123456789012345678901234567890123456789
       config:
         # nacos服务地址通过启动脚本指定
         username: ${nacos_username}
         password: ${nacos_password}
         server-addr: ${nacos_server}
+        access-key: SecretKey012345678901234567890123456789012345678901234567890123456789
 
 logging:
   level:

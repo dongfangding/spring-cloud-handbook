@@ -9,6 +9,7 @@ import com.ddf.common.handbook.user.response.base.EmailRegistryValidateResponse;
 import com.ddf.common.handbook.user.response.base.UserInfoDTO;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/userInfo")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@Slf4j
 public class UserInfoFacadeImpl implements AppUserInfoFacade {
 
     /**
@@ -33,6 +35,7 @@ public class UserInfoFacadeImpl implements AppUserInfoFacade {
      */
     @Override
     public ResponseData<EmailRegistryValidateResponse> checkRegistryInfo(EmailRegistryValidateRequest request) {
+        log.info("用户接口-校验注册信息被调用");
         return ResponseData.success(new EmailRegistryValidateResponse());
     }
 
