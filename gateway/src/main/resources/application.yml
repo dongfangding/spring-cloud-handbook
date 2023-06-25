@@ -1,14 +1,12 @@
 server:
-  port: 8099
+  port: 8101
   servlet:
-    context-path: user
+    context-path: /gateway
 spring:
   application:
-    name: user-service
+    name: gateway-service
   profiles:
     active: dev
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       discovery:
@@ -24,6 +22,17 @@ spring:
         server-addr: ${nacos_server}
         access-key: SecretKey012345678901234567890123456789012345678901234567890123456789
 
+    gateway:
+      routes:
+        - id: aggregate-service
+          uri: lb://aggregate-service
+          predicates:
+            - Path=/gateway/aggregate/**
+          filters:
+            - StripPrefix=1
+      filter:
+        strip-prefix:
+          enabled: true
 logging:
   level:
     root: info

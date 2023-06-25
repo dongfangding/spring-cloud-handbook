@@ -1,6 +1,6 @@
 package com.ddf.common.handbook.user.core;
 
-import com.ddf.boot.common.core.logaccess.EnableLogAspect;
+import com.ddf.boot.common.mvc.logaccess.EnableLogAspect;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

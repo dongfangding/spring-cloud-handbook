@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2023/03/08 18:06
  */
 @RestController
-@RequestMapping("用户控制器")
+@RequestMapping("user")
 @RequiredArgsConstructor(onConstructor_ = {@Autowired})
 @Slf4j
 public class UserController {

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.ddf.common.spring-cloud-handbook</groupId>
+        <artifactId>spring-cloud-handbook</artifactId>
+        <version>1.0.0-2021.0.5-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>gateway</artifactId>
+    <version>1.0.0-2021.0.5-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <pangu-common-core.version>1.0.0-2021.0.5-SNAPSHOT</pangu-common-core.version>
+        <pangu-common-gateway.version>1.0.0-2021.0.5-SNAPSHOT</pangu-common-gateway.version>
+        <aggregate-api.version>1.0.0-2021.0.5-SNAPSHOT</aggregate-api.version>
+        <user-api.version>1.0.0-2021.0.5-SNAPSHOT</user-api.version>
+        <ddf-common-core.version>1.0.2-2613-SNAPSHOT</ddf-common-core.version>
+        <ddf-common-limit.version>1.0.2-2613-SNAPSHOT</ddf-common-limit.version>
+        <ddf-common-authentication.version>1.0.2-2613-SNAPSHOT</ddf-common-authentication.version>
+        <ddf-common-redis.version>1.0.2-2613-SNAPSHOT</ddf-common-redis.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ddf.cloud.common</groupId>
+            <artifactId>pangu-common-gateway</artifactId>
+            <version>${pangu-common-gateway.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ddf.common</groupId>
+            <artifactId>ddf-common-core</artifactId>
+            <version>${ddf-common-core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ddf.common</groupId>
+            <artifactId>ddf-common-redis</artifactId>
+            <version>${ddf-common-redis.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

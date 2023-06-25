@@ -1,4 +1,4 @@
-package com.ddf.common.handbook.aggregate.core.config;
+package com.ddf.common.handbook.aggregate.core.infrastructure.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

@@ -1,0 +1,4 @@
+POST http://localhost:8101/gateway/aggregate/user/checkRegistryInfo
+content-type: application/json
+
+{}

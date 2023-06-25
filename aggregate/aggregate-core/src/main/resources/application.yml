@@ -1,5 +1,7 @@
 server:
   port: 8100
+  servlet:
+    context-path: /aggregate
 spring:
   application:
     name: aggregate-service
