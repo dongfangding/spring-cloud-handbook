@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @version 1.0
  * @date 2022/04/09 23:15
  */
-@FeignClient(name = UserConst.SERVICE_NAME, path = "/userInfo", contextId = "appUserInfoFacade")
+@FeignClient(name = UserConst.SERVICE_NAME, path = UserConst.CONTEXT_PATH + "/userInfo", contextId = "appUserInfoFacade")
 public interface AppUserInfoFacade {
 
     /**

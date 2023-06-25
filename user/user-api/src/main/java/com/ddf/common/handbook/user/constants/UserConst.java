@@ -10,6 +10,11 @@ package com.ddf.common.handbook.user.constants;
 public class UserConst {
 
     /**
+     * server.context-path
+     */
+    public static final String CONTEXT_PATH = "/user";
+
+    /**
      * feign client 服务名称
      */
     public static final String SERVICE_NAME = "user-service";

@@ -1,14 +1,12 @@
 server:
   port: 8099
   servlet:
-    context-path: user
+    context-path: /user
 spring:
   application:
     name: user-service
   profiles:
     active: dev
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       discovery:
@@ -16,13 +14,13 @@ spring:
         username: ${nacos_username}
         password: ${nacos_password}
         server-addr: ${nacos_server}
-        access-key: SecretKey012345678901234567890123456789012345678901234567890123456789
+        access-key: ${nacos_key}
       config:
         # nacos服务地址通过启动脚本指定
         username: ${nacos_username}
         password: ${nacos_password}
         server-addr: ${nacos_server}
-        access-key: SecretKey012345678901234567890123456789012345678901234567890123456789
+        access-key: ${nacos_key}
 
 logging:
   level:

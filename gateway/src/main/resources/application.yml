@@ -14,25 +14,14 @@ spring:
         username: ${nacos_username}
         password: ${nacos_password}
         server-addr: ${nacos_server}
-        access-key: SecretKey012345678901234567890123456789012345678901234567890123456789
+        access-key: ${nacos_key}
       config:
         # nacos服务地址通过启动脚本指定
         username: ${nacos_username}
         password: ${nacos_password}
         server-addr: ${nacos_server}
-        access-key: SecretKey012345678901234567890123456789012345678901234567890123456789
+        access-key: ${nacos_key}
 
-    gateway:
-      routes:
-        - id: aggregate-service
-          uri: lb://aggregate-service
-          predicates:
-            - Path=/gateway/aggregate/**
-          filters:
-            - StripPrefix=1
-      filter:
-        strip-prefix:
-          enabled: true
 logging:
   level:
     root: info
