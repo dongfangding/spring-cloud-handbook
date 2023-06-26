@@ -1,4 +1,7 @@
 POST http://localhost:8101/gateway/aggregate/user/checkRegistryInfo
 content-type: application/json
+User-Agent: google
+Authorization: Bearer $2a$10$d97nz86QSuIEWh1fAD4asOQ7XvFbWkGinIqAh8.NfuslxTxSoOxo2<=>efe83ec743690a1c463c6b551bbe0d0909c8f1d3b15642fc354cc5d492b61277b3a2cba4550bebae17791d2c141bcc64644ea184960e4c14d97cb5d1e763c88cc943cabbb495098f63d19442c50e7acb730ba9aa44d1754c61b15df8398d0a63
+
 
 {}

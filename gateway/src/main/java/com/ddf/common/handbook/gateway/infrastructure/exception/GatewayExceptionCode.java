@@ -11,7 +11,10 @@ import com.ddf.boot.common.api.exception.BaseCallbackCode;
  */
 public enum GatewayExceptionCode implements BaseCallbackCode {
 
+    ILLEGAL_TOKEN("ILLEGAL_TOKEN", "token格式不合法"),
     USER_INFO_EXPIRED_OR_NOT_EXIST("USER_INFO_EXPIRED_OR_NOT_EXIST", "用户信息已失效，请重新登录"),
+    USER_ENVIRONMENT_CHANGED("USER_ENVIRONMENT_CHANGED", "用户环境变更，请重新登陆"),
+    USER_IN_BLACK_LIST("USER_IN_BLACK_LIST", "用户已被关进小黑屋")
 
 
     ;

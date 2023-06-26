@@ -94,7 +94,7 @@ public class TokenFilter implements GlobalFilter {
      */
     private Mono<Void> responseErrorJson(ServerHttpResponse response, BaseCallbackCode bizCode) {
         response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
-        String result = JSONUtil.toJsonStr(ResponseData.failure(bizCode));
+        String result = JsonUtil.toJson(ResponseData.failure(bizCode));
         DataBuffer buffer = response.bufferFactory().wrap(result.getBytes(StandardCharsets.UTF_8));
         return response.writeWith(Flux.just(buffer));
     }
@@ -148,7 +148,7 @@ public class TokenFilter implements GlobalFilter {
         UserClaim tokenUserClaim;
         String tokenPrefix = authenticationProperties.getTokenPrefix();
         if (tokenHeader == null || !tokenHeader.startsWith(tokenPrefix)) {
-            throw new UnauthorizedException("token格式不合法！");
+            throw new UnauthorizedException(GatewayExceptionCode.ILLEGAL_TOKEN);
         }
         String token = tokenHeader.split(tokenPrefix)[1];
 
@@ -184,19 +184,19 @@ public class TokenFilter implements GlobalFilter {
 
     private UserClaim customizeCheck(ServerHttpRequest request, AuthenticateCheckResult authenticateCheckResult) {
         final UserClaim tokenUserClaim = authenticateCheckResult.getUserClaim();
-        PreconditionUtil.checkArgument(Objects.nonNull(tokenUserClaim), "解析用户为空!");
+        PreconditionUtil.checkArgument(Objects.nonNull(tokenUserClaim), GatewayExceptionCode.ILLEGAL_TOKEN);
         PreconditionUtil.checkArgument(!StringUtils.isAnyBlank(tokenUserClaim.getUsername(), tokenUserClaim.getCredit()),
-                "用户关键信息缺失！");
+                GatewayExceptionCode.ILLEGAL_TOKEN);
         // credit校验
         final String credit = StringUtils.defaultIfBlank(request.getHeaders().getFirst(authenticationProperties.getCreditHeaderName()),
                 request.getHeaders().getFirst("User-Agent"));
         if (Objects.nonNull(tokenUserClaim.getCredit()) && !Objects.equals(tokenUserClaim.getCredit(), credit)) {
             log.error("当前请求credit和token不匹配， 当前: {}, token: {}", credit, tokenUserClaim.getCredit());
-            throw new UnauthorizedException("登录环境变更，需要重新登录！");
+            throw new UnauthorizedException(GatewayExceptionCode.USER_ENVIRONMENT_CHANGED);
         }
         // 获取最新用户信息
         UserClaim storeUser = getUserClaimFromToken(tokenUserClaim);
-        PreconditionUtil.checkArgument(!storeUser.isDisabled(), new UnauthorizedException("用户已被关进小黑屋了~"));
+        PreconditionUtil.checkArgument(!storeUser.isDisabled(), new UnauthorizedException(GatewayExceptionCode.USER_IN_BLACK_LIST));
         return storeUser;
     }
 }
