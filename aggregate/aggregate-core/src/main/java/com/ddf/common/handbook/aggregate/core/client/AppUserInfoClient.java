@@ -38,8 +38,9 @@ public class AppUserInfoClient {
      * @param request
      * @return
      */
-    public ResponseData<EmailRegistryValidateResponse> checkRegistryInfo(EmailRegistryValidateRequest request) {
-        return appUserInfoFacade.checkRegistryInfo(request);
+    public EmailRegistryValidateResponse checkRegistryInfo(EmailRegistryValidateRequest request) {
+        appUserInfoFacade.checkRegistryInfo(request).requiredSuccess();
+        return appUserInfoFacade.checkRegistryInfo(request).requiredSuccess();
     }
 
     /**
@@ -48,8 +49,8 @@ public class AppUserInfoClient {
      * @param request
      * @return
      */
-    public ResponseData<Boolean> registry(@RequestBody @Validated EmailRegistryRequest request) {
-        return appUserInfoFacade.registry(request);
+    public Boolean registry(@RequestBody @Validated EmailRegistryRequest request) {
+        return appUserInfoFacade.registry(request).requiredSuccess();
     }
 
     /**
@@ -58,7 +59,7 @@ public class AppUserInfoClient {
      * @param request
      * @return
      */
-    public ResponseData<List<UserInfoDTO>> searchUser(@Validated SearchUserRequest request) {
-        return appUserInfoFacade.searchUser(request);
+    public List<UserInfoDTO> searchUser(@Validated SearchUserRequest request) {
+        return appUserInfoFacade.searchUser(request).requiredSuccess();
     }
 }

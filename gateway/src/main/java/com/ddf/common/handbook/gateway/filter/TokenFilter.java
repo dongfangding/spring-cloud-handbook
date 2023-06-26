@@ -46,7 +46,7 @@ import reactor.core.publisher.Mono;
  * @since 2023/06/23 10:21
  */
 @Slf4j
-//@Component
+@Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class TokenFilter implements GlobalFilter {
 
